@@ -1,3 +1,25 @@
+* Added experimental `ydb.{Register,Unregister}DsnParser` global funcs for register/unregister external custom DSN parser for `ydb.Open` and `sql.Open` driver constructor
+* Simple implement option WithReaderWithoutConsumer
+* Fixed bug: topic didn't send specified partition number to a server 
+
+## v3.67.2
+* Fixed incorrect formatting of decimal. Implementation of decimal has been reverted to latest working version
+
+## v3.67.1 (retracted)
+* Fixed race of stop internal processes on close topic writer
+* Fixed goroutines leak within topic reader on network problems
+
+## v3.67.0
+* Added `ydb.WithNodeAddressMutator` experimental option for mutate node addresses from `discovery.ListEndpoints` response
+* Added type assertion checks to enhance type safety and prevent unexpected panics in critical sections of the codebase
+
+## v3.66.3
+* Fixed the OAuth2 test
+
+## v3.66.2
+* Added `trace.DriverConnStreamEvents` details bit
+* Added `trace.Driver.OnConnStreamFinish` event
+
 ## v3.66.1
 * Added flush messages from buffer before close topic writer
 * Added Flush method for topic writer
